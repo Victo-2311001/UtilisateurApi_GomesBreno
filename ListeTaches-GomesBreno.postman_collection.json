@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "f12a9f82-7672-44bb-a35e-72c88b71f571",
+		"name": "ListeTaches-GomesBreno",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41198009"
+	},
+	"item": [
+		{
+			"name": "CreationUtilisateur",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nom\": \"amy\",\r\n  \"prenom\": \"amy\",\r\n  \"courriel\": \"amy.oi@oi.com\",\r\n  \"password\": \"amy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/liste/utilisateur",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"utilisateur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recupereCleApi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"courriel\": \"amy.oi@oi.com\",\r\n  \"password\": \"amy\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/liste/utilisateur/cleapi",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"utilisateur",
+						"cleapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegenererCleApi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"courriel\": \"amy.oi@oi.com\",\r\n  \"password\": \"amy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/liste/utilisateur/nouvellecle",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"utilisateur",
+						"nouvellecle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AfficherListeTachesUtilisateur",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches?toutes=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches"
+					],
+					"query": [
+						{
+							"key": "toutes",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AfficherDetailsParID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AjouterUneTache",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"amydsad\",\r\n  \"description\": \"oi\",\r\n  \"date_debut\": \"2025-05-06\",\r\n  \"date_echeance\": \"2025-05-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/ajouter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SupprimerUneTache",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/delete/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"delete",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifierStatusTache",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nouveauStatut\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14/statut",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14",
+						"statut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifierTache",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"test change\",\r\n  \"description\":  \"Nouvelle description\",\r\n  \"date_debut\": \"2025-05-10\",\r\n  \"date_echeance\": \"2025-05-15\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14/modifier",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14",
+						"modifier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AjouterSousTache",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\": \"asas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14/soustache/ajouter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14",
+						"soustache",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSousTache",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14/soustache/delete/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14",
+						"soustache",
+						"delete",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifierStatutSousTache",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nouveauStatut\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14/soustache/statut/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14",
+						"soustache",
+						"statut",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifierSousTache",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "cle_api",
+						"value": "c7878110-760d-41fe-8467-cc08d6ac3279",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"allo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/liste/taches/14/soustache/modifier/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"liste",
+						"taches",
+						"14",
+						"soustache",
+						"modifier",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
